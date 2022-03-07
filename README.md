@@ -3,7 +3,7 @@ This project integrates a slightly modified version of the [BaSyx SDK for .NET](
 
 ## Dependencies
 - Unity >= 2020.3.9.f1, API compatibility level .NET 4.x
-- AAS backend consisting of server and registry (included in project)
+- Running [AAS backend](https://mrk40.dfki.de/mrk-4.0/aasclientunityuwp/-/tree/master/Backend/aas) consisting of server and registry (included in project)
 
 
 ## Changes in BaSyx SDK
@@ -16,7 +16,10 @@ In order to achieve a compatibility with UWPs IL2CPP scripting backend, the foll
 - added `Assets/Scripts/AotEnforcerer.cs` (because of https://github.com/jilleJr/Newtonsoft.Json-for-Unity/issues/79)
 
 ## Usage
-Find an example Unity scene in `Assets/Scenes` which shows how to retrieve AAS and related submodel information of a Universal 10 robot, as modeled in `Backend/docker/aas/data/aas-server/example.aasx`. Using `docker-compose`, you can setup an instance of an AAS server and registry with
+Find an example Unity scene in `Assets/Scenes` which shows how to retrieve AAS and related submodel information of a Universal 10 robot, as modeled in `Backend/aas/data/aas-server/example.aasx`. Using `docker-compose`, you can setup an instance of an AAS server and registry with
 ```bash
 docker-compose pull && docker-compose  up -d
 ```
+
+**Note**: 
+In order to make the AAS server externally accessible, you have to replace the entry `contextHostname=localhost` in `Backend/aas/aas-server/context.properties` by `contextHostname=YOUR_IP_ADDRESS`.
