@@ -1,0 +1,29 @@
+version: '3.6'
+
+networks:
+  basys:
+    internal: false
+
+services:    
+
+  aas-registry:
+    image: dfkibasys/aas-registry:1.0.2
+    container_name: aas-registry
+    ports: 
+     - "4000:4000"
+    volumes:
+      - ./data/aas-registry:/usr/share/config
+    restart: always
+    networks:
+      - basys
+
+  aas-server:
+    image: dfkibasys/aas-server:1.0.1
+    container_name: aas-server
+    ports: 
+     - "4001:4001" 
+    volumes:
+      - ./data/aas-server:/usr/share/config
+    restart: always
+    networks:
+      - basys
