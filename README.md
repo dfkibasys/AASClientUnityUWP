@@ -23,3 +23,5 @@ docker-compose pull && docker-compose  up -d
 
 **Note**: 
 In order to make the AAS server externally accessible, you have to replace the entry `contextHostname=localhost` in `Backend/aas/aas-server/context.properties` by `contextHostname=YOUR_IP_ADDRESS`.
+
+For usage in other Unity projects, simply export contents of the `Assets` folder as Unity package.
