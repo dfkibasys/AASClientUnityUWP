@@ -14,3 +14,9 @@ In order to achieve a compatibility with UWPs IL2CPP scripting backend, the foll
 - replaced `Assets/Plugins/Newtonsoft.Json.dll` with [Newtonsoft.Json for Unity](https://github.com/jilleJr/Newtonsoft.Json-for-Unity) 
 - replaced all other DLLs in `Assets/Plugins` with the latest version (netstandard2.0) from Nuget.
 - added `Assets/Scripts/AotEnforcerer.cs` (because of https://github.com/jilleJr/Newtonsoft.Json-for-Unity/issues/79)
+
+## Usage
+Find an example Unity scene in `Assets/Scenes` which shows how to retrieve AAS and related submodel information of a Universal 10 robot, as modeled in `Backend/docker/aas/data/aas-server/example.aasx`. Using `docker-compose`, you can setup an instance of an AAS server and registry with
+```bash
+docker-compose pull && docker-compose  up -d
+```
